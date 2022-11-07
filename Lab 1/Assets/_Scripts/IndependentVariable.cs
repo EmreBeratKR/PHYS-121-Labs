@@ -5,7 +5,7 @@ public class IndependentVariable : MonoBehaviour
 {
     [SerializeField] private TMP_Text nameField, valueField;
     [SerializeField] private string variableName, unit;
-    [SerializeField] private float defaultValue;
+    [SerializeField] private float defaultValue, minValue, maxValue;
 
     
     public float Value
@@ -30,12 +30,12 @@ public class IndependentVariable : MonoBehaviour
 
     public void IncreaseValue(float value)
     {
-        Value += value;
+        Value = Mathf.Clamp(Value + value, minValue, maxValue);
     }
 
     public void DecreaseValue(float value)
     {
-        Value -= value;
+        Value = Mathf.Clamp(Value - value, minValue, maxValue);
     }
 
 

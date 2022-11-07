@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Simulator : MonoBehaviour
 {
@@ -6,41 +7,40 @@ public class Simulator : MonoBehaviour
     [SerializeField] private Graph graph;
     [SerializeField] private Ball ball;
     [SerializeField] private Vector3 gravity = new Vector3(0f, -9.81f, 0f);
-    [SerializeField] private float elapsedTime;
 
+
+    public UnityAction<float> OnMoveNext;
+    public UnityAction OnSimulationEnd;
+    public UnityAction OnSimulationStart;
+    public UnityAction OnSimulationStop;
+
+
+    public bool IsSimulationEnd => IsSimulating && ElapsedTime01 >= 1f;
+    public bool IsSimulating { get; private set; }
+    
     
     private Vector3 Acceleration => gravity;
     private float InitialSpeed => speedVariable.Value;
     private float InitialAnglesInDegree => angleVariable.Value;
     private float InitialHeight => heightVariable.Value;
+    private float ElapsedTime01 => m_ElapsedTime / m_TotalFlightTime;
 
 
     private Vector3 m_InitialPosition;
     private Vector3 m_InitialVelocity;
     private float m_TotalFlightTime;
     private float m_MaxHeight;
-    private bool m_IsSimulating;
+    private float m_ElapsedTime;
+    private float m_SimulationSpeed = 1f;
 
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (m_IsSimulating)
-            {
-                StopSimulating();
-            }
-
-            else
-            {
-                StartSimulating();
-            }
-        }
+        if (!IsSimulating) return;
         
-        if (!m_IsSimulating) return;
+        if (IsSimulationEnd) return;
 
-        var positionOverTime = GetPositionOverTime(elapsedTime);
-        ball.Position = graph.TransformPoint(positionOverTime); 
+        MoveNext();
     }
 
 
@@ -56,14 +56,64 @@ public class Simulator : MonoBehaviour
         m_TotalFlightTime = GetTotalFlightTime();
         m_MaxHeight = GetMaxHeight();
 
-        m_IsSimulating = true;
+        IsSimulating = true;
+        
+        OnSimulationStart?.Invoke();
+    }
+
+    public void PauseSimulating()
+    {
+        IsSimulating = false;
     }
 
     public void StopSimulating()
     {
-        m_IsSimulating = false;
+        IsSimulating = false;
+        UpdateElapsedTime(0f);
+        
+        OnSimulationStop?.Invoke();
+    }
+
+    public void UpdateElapsedTime(float t)
+    {
+        m_ElapsedTime = m_TotalFlightTime * t;
+        OnBecomeDirty();
+    }
+
+    public void ForceSetDirty()
+    {
+        OnBecomeDirty();
+    }
+
+    public void SetSimulationSpeed(float speed)
+    {
+        m_SimulationSpeed = speed;
     }
     
+    
+    private void OnBecomeDirty()
+    {
+        UpdateSimulation();
+    }
+
+    private void UpdateSimulation()
+    {
+        var positionOverTime = GetPositionOverTime(m_ElapsedTime);
+        ball.Position = graph.TransformPoint(positionOverTime);
+    }
+
+    private void MoveNext()
+    {
+        var scaledDeltaTime = Time.deltaTime * m_SimulationSpeed;
+        m_ElapsedTime = Mathf.Clamp(m_ElapsedTime + scaledDeltaTime, 0f, m_TotalFlightTime);
+
+        OnBecomeDirty();
+        OnMoveNext?.Invoke(ElapsedTime01);
+        
+        if (!IsSimulationEnd) return;
+        
+        OnSimulationEnd?.Invoke();
+    }
     
     private float GetTotalFlightTime()
     {
@@ -94,7 +144,7 @@ public class Simulator : MonoBehaviour
 
     private void OnValidate()
     {
-        elapsedTime = Mathf.Clamp(elapsedTime, 0f, m_TotalFlightTime);
+        m_ElapsedTime = Mathf.Clamp(m_ElapsedTime, 0f, m_TotalFlightTime);
     }
 
 #endif
