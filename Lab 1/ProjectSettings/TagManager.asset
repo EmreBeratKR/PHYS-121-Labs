@@ -50,3 +50,6 @@ TagManager:
   - name: Foreground
     uniqueID: 2189985895
     locked: 0
+  - name: Meter
+    uniqueID: 3326144129
+    locked: 0

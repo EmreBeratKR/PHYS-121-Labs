@@ -754,6 +754,22 @@ Transform:
   m_Father: {fileID: 1306520855}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &287015453 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1646481792290737493, guid: a22172801ca62514daa52557d2595562, type: 3}
+  m_PrefabInstance: {fileID: 1646481792040488776}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &287015454 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1646481792290737494, guid: a22172801ca62514daa52557d2595562, type: 3}
+  m_PrefabInstance: {fileID: 1646481792040488776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dff735e6249989419f629ece08a44bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &430833188
 GameObject:
   m_ObjectHideFlags: 0
@@ -3620,6 +3636,40 @@ Transform:
   m_Father: {fileID: 1425026836}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1370778451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1370778452}
+  m_Layer: 0
+  m_Name: Meters
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1370778452
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370778451}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 287015453}
+  - {fileID: 1737625954}
+  - {fileID: 2045114448}
+  m_Father: {fileID: 1425026836}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1423535373
 GameObject:
   m_ObjectHideFlags: 0
@@ -3689,6 +3739,7 @@ Transform:
   - {fileID: 1027904602}
   - {fileID: 1470276314}
   - {fileID: 1359669695}
+  - {fileID: 1370778452}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3707,6 +3758,9 @@ MonoBehaviour:
   speedVariable: {fileID: 602818958}
   angleVariable: {fileID: 1076120473}
   heightVariable: {fileID: 1290215561}
+  speedometer: {fileID: 287015454}
+  speedometerX: {fileID: 1737625955}
+  speedometerY: {fileID: 2045114449}
   graph: {fileID: 1470276315}
   ball: {fileID: 1245545900}
   gravity: {x: 0, y: -9.81, z: 0}
@@ -4154,6 +4208,91 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1695182900}
   m_CullTransparentMesh: 1
+--- !u!1001 &1737625953
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1370778452}
+    m_Modifications:
+    - target: {fileID: 1566655491079527269, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_text
+      value: Speed-X
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737492, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_Name
+      value: Speedometer X
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737493, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737493, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.631
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737493, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.251
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737493, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737493, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737493, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737493, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737493, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737493, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737493, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737493, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737494, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: title
+      value: Speed-X
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737494, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: maxValue
+      value: 50
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a22172801ca62514daa52557d2595562, type: 3}
+--- !u!4 &1737625954 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1646481792290737493, guid: a22172801ca62514daa52557d2595562, type: 3}
+  m_PrefabInstance: {fileID: 1737625953}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1737625955 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1646481792290737494, guid: a22172801ca62514daa52557d2595562, type: 3}
+  m_PrefabInstance: {fileID: 1737625953}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dff735e6249989419f629ece08a44bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1780061724
 GameObject:
   m_ObjectHideFlags: 0
@@ -4406,6 +4545,91 @@ Transform:
   m_Father: {fileID: 1470276314}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2045114447
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1370778452}
+    m_Modifications:
+    - target: {fileID: 1566655491079527269, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_text
+      value: Speed-X
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737492, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_Name
+      value: Speedometer Y
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737493, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737493, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.747
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737493, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.251
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737493, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737493, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737493, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737493, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737493, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737493, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737493, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737493, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737494, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: title
+      value: Speed-Y
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737494, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: maxValue
+      value: 50
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a22172801ca62514daa52557d2595562, type: 3}
+--- !u!4 &2045114448 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1646481792290737493, guid: a22172801ca62514daa52557d2595562, type: 3}
+  m_PrefabInstance: {fileID: 2045114447}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2045114449 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1646481792290737494, guid: a22172801ca62514daa52557d2595562, type: 3}
+  m_PrefabInstance: {fileID: 2045114447}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dff735e6249989419f629ece08a44bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2098147682
 GameObject:
   m_ObjectHideFlags: 0
@@ -4748,3 +4972,80 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70f2388b5cd9460498cd1145928be933, type: 3}
+--- !u!1001 &1646481792040488776
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1370778452}
+    m_Modifications:
+    - target: {fileID: 1566655491079527269, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_text
+      value: Speed
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481790515310259, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8419819
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481790515310259, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.5395058
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737492, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_Name
+      value: Speedometer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737493, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737493, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.524
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737493, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.251
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737493, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737493, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737493, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737493, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737493, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737493, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737493, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737493, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737494, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: title
+      value: Speed
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646481792290737494, guid: a22172801ca62514daa52557d2595562, type: 3}
+      propertyPath: maxValue
+      value: 50
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a22172801ca62514daa52557d2595562, type: 3}

@@ -4,6 +4,7 @@ using UnityEngine.Events;
 public class Simulator : MonoBehaviour
 {
     [SerializeField] private IndependentVariable speedVariable, angleVariable, heightVariable;
+    [SerializeField] private Meter speedometer, speedometerX, speedometerY;
     [SerializeField] private Graph graph;
     [SerializeField] private Ball ball;
     [SerializeField] private Vector3 gravity = new Vector3(0f, -9.81f, 0f);
@@ -100,6 +101,11 @@ public class Simulator : MonoBehaviour
     {
         var positionOverTime = GetPositionOverTime(m_ElapsedTime);
         ball.Position = graph.TransformPoint(positionOverTime);
+
+        var velocityOverTime = GetVelocityOverTime(m_ElapsedTime);
+        speedometer.UpdateValue(velocityOverTime.magnitude);
+        speedometerX.UpdateValue(Mathf.Abs(velocityOverTime.x));
+        speedometerY.UpdateValue(Mathf.Abs(velocityOverTime.y));
     }
 
     private void MoveNext()
